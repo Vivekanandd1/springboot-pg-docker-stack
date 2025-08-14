@@ -1,9 +1,14 @@
 package com.vivekcode;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.util.Objects;
 
+@Entity
 public class TechEmployee {
 
+    @Id
     private Integer id;
     private String Name;
     private String TechStack;
@@ -12,6 +17,10 @@ public class TechEmployee {
         this.id = id;
         this.Name = Name;
         this.TechStack = TechStack;
+    }
+
+    public TechEmployee() {
+
     }
 
     public Integer getId() {
