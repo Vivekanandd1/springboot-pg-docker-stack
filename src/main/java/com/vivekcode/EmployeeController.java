@@ -11,17 +11,15 @@ import java.util.List;
 @RequestMapping("api/v1/EmployeeDetails")
 public class EmployeeController {
 
-   @GetMapping
-    public List<TechEmployee> getEmployees(){
-       return List.of( new TechEmployee(
-              1, "Vivek", "Java, Rails, JS"
+    private final TechEmployeeServices techEmployeeServices;
 
-       ),
-               new TechEmployee(
-                       2,"Damy","Selenium, Appium, Playwright"
-               )
-       );
-
+    public EmployeeController(TechEmployeeServices techEmployeeServices) {
+        this.techEmployeeServices = techEmployeeServices;
     }
 
+    @GetMapping
+    public List<TechEmployee> getEmployees() {
+      return techEmployeeServices.getTechEmployeeList();
+
+    }
 }
