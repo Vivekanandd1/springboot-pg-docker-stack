@@ -16,4 +16,8 @@ public class TechEmployeeServices {
     public List<TechEmployee> getTechEmployeeList() {
         return techEmployeeRepo.findAll();
     }
+
+    public void insertechEmployee(TechEmployee techEmployee) {
+        techEmployeeRepo.save(techEmployee);
+    }
 }
