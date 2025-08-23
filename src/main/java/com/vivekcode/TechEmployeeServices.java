@@ -20,4 +20,8 @@ public class TechEmployeeServices {
     public void insertechEmployee(TechEmployee techEmployee) {
         techEmployeeRepo.save(techEmployee);
     }
+
+    public TechEmployee getTechEmployeebyID(Integer id) {
+        return techEmployeeRepo.findById(id).orElseThrow(()->new IllegalStateException(id + "not found"));
+    }
 }
