@@ -5,10 +5,12 @@ GET http://localhost:8080
 GET  http://localhost:8080/api/v1/EmployeeDetails
 
 ###
+GET  http://localhost:8080/api/v1/EmployeeDetails/2
+###
 POST  http://localhost:8080/api/v1/EmployeeDetails
 Content-Type: application/json
 
 {
-  "Name" : "Vivek D",
-  "TechStack": "Selenium, Postman, Java"
+  "name" : "Vatsal D",
+  "techStack": "AI, ML, DS"
 }
