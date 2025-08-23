@@ -1,10 +1,7 @@
 package com.vivekcode;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,9 +20,14 @@ public class EmployeeController {
       return techEmployeeServices.getTechEmployeeList();
     }
 
+    @GetMapping("{id}")
+    public TechEmployee getEmployeesbyID(@PathVariable Integer id) {
+        return techEmployeeServices.getTechEmployeebyID(id);
+    }
 
     @PostMapping
-    public void addTechEmployee(TechEmployee techEmployee) {
+    public void addTechEmployee( @RequestBody TechEmployee techEmployee) {
+
         techEmployeeServices.insertechEmployee(techEmployee);
     }
 
